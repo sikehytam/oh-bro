@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Let Down Lyrics</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('file-PucLnRVACcQoGL7Cydn5pk') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      padding-top: 80px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    .lyric-line {
+      font-size: 1.8em;
+      font-weight: bold;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+      margin: 10px 0;
+    }
+
+    .emoji {
+      font-size: 2em;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      } to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎵 Let Down - Radiohead 🎵</h1>
+  <div id="lyrics"></div>
+  <div class="emoji">😧</div>
+
+  <script>
+    const lyrics = [
+      "You know, you know where you are with",
+      "You know where you are with",
+      "Floor collapses, floating",
+      "Bouncing back and",
+      "One day, I am gonna grow wings",
+      "A chemical reaction (you know where you are)",
+      "Hysterical and useless (you know where you are)",
+      "Hysterical and (you know where you are)"
+    ];
+
+    const lyricsContainer = document.getElementById("lyrics");
+
+    lyrics.forEach((line, index) => {
+      setTimeout(() => {
+        const p = document.createElement("p");
+        p.className = "lyric-line";
+        p.style.animationDelay = `${index * 0.5}s`;
+        p.textContent = line;
+        lyricsContainer.appendChild(p);
+      }, index * 2000); // Delay 2 detik per baris
+    });
+  </script>
+</body>
+  </html>
